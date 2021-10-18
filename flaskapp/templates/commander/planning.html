@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">   
+        <h2>Het jaarplan van 106 Inlichtingen compagnie</h2>
+        <h3>De planning voor de subeenheden</h3>
+        <span text-align=center>
+            {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+            {% endfor %}
+        </span>
+    </div>
+{% endblock content %}

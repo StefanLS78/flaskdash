@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+
+    {% if title %}
+        <title>106 Inlncie - {{ title }}</title>
+    {% else %}
+        <title> 106 Inlncie </title>
+    {% endif %}
+
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar">
+                <ul>
+                    <li><a class="logo" href="{{ url_for('main.home') }}">106 Inlncie</a></li>
+                        <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                        <li><a href="{{ url_for('main.about') }}">About</a></li>
+
+                        {% if current_user.is_authenticated %}
+                            <li><a class="navbar-right" href="{{ url_for('users.account') }}">Account</a></li>
+                            <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+                        {% else %}
+                            <li><a class="navbar-right" href="{{ url_for('users.login') }}">Login</a></li>
+                            <!--li><a href="{{ url_for('users.register') }}">Register</a></li-->
+                        {% endif %}
+
+                </ul>
+            </nav> 
+        </div>
+
+    </header> 
+    <section id="showcase">
+        <div class="container">
+            <h1>Unitas in Diversitate</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <section  id="main">
+            <!--div class="content-section"-->
+                {% block content %}{% endblock %}
+                <!--H2>Welkom bij 106</H2>
+                
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio, quidem itaque asperiores pariatur molestiae reiciendis molestias fuga ad quisquam illum inventore eos, cupiditate non aliquam architecto doloremque nobis at.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, praesentium expedita minima, nesciunt tempora rem eaque voluptates repellat ipsam, 
+                    sint corrupti modi alias eos nihil atque! Odio vitae laborum reiciendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem tempore et 
+                    officiis dolore alias maxime perspiciatis delectus distinctio, rem deleniti consectetur esse, est vitae, explicabo laudantium sapiente a aliquid? Vel.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quas consectetur necessitatibus. Ipsum similique pariatur voluptatem quo! Autem ut 
+                    consequuntur laudantium incidunt laboriosam. Consequatur quisquam quia fuga quos nesciunt ipsum!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, praesentium expedita minima, nesciunt tempora rem eaque voluptates repellat ipsam, 
+                    sint corrupti modi alias eos nihil atque! Odio vitae laborum reiciendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem tempore et 
+                    officiis dolore alias maxime perspiciatis delectus distinctio, rem deleniti consectetur esse, est vitae, explicabo laudantium sapiente a aliquid? Vel.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quas consectetur necessitatibus. Ipsum similique pariatur voluptatem quo! Autem ut 
+                    consequuntur laudantium incidunt laboriosam. Consequatur quisquam quia fuga quos nesciunt ipsum!  
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, praesentium expedita minima, nesciunt tempora rem eaque voluptates repellat ipsam, 
+                    sint corrupti modi alias eos nihil atque! Odio vitae laborum reiciendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem tempore et 
+                    officiis dolore alias maxime perspiciatis delectus distinctio, rem deleniti consectetur esse, est vitae, explicabo laudantium sapiente a aliquid? Vel.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quas consectetur necessitatibus. Ipsum similique pariatur voluptatem quo! Autem ut 
+                    consequuntur laudantium incidunt laboriosam. Consequatur quisquam quia fuga quos nesciunt ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquam, praesentium expedita minima, nesciunt tempora rem eaque voluptates repellat ipsam, 
+                    sint corrupti modi alias eos nihil atque! Odio vitae laborum reiciendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem tempore et 
+                    officiis dolore alias maxime perspiciatis delectus distinctio, rem deleniti consectetur esse, est vitae, explicabo laudantium sapiente a aliquid? Vel.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quas consectetur necessitatibus. Ipsum similique pariatur voluptatem quo! Autem ut 
+                    consequuntur laudantium incidunt laboriosam. Consequatur quisquam quia fuga quos nesciunt ipsum!  
+                </p-->
+            <!--/div-->
+        </section>
+        <aside id="sidebar">
+            <div class="content-section-side">
+                <h3>Van de Commandant</h3>
+                <div class="muted italic">
+                    Hier vind u informatie over 106 Inlichtingen compagnie
+                </div>
+                
+                <div class="link">
+                    <ul>
+                        <li><a class="link" href="{{ url_for('commander.mission') }}">Missie/visie</a></li>
+                        <li><a class="link" href="{{ url_for('commander.purpose') }}">Oogmerk</a></li>
+                        <li><a class="link" href="{{ url_for('commander.planning') }}">Planning</a></li>
+                        <li><a class="link" href="{{ url_for('commander.sport') }}">Sportrooster</a></li>
+                        <li><a class="link" href="{{ url_for('/dashboard/') }}">Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+        
+    
+        <!--
+            open a link on a new page:
+            <a href="http.google.com" target="_blank"> Google </a> 
+        -->
+    
+    <footer id="main-footer">
+        <div >Contact
+            <ul>
+                <li>T: 0612345678</li>
+                <li>M: contact@106.mindef.nl</li>
+            </ul>
+        </div>
+        <div id="copyright">
+            Copyright &copy; 2021 106 Inlichtingen compagnie
+        </div>
+
+    </footer>
+</body>
+
+</html>

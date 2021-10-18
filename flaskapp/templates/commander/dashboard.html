@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    
+
+    <!--div class="content-section">   
+        <img src="{{ url_for('static', filename='website_pics/' + '106_logo.png') }}" width="125" height="125" align=right>
+        </br>
+        <h2>106 Inlncie in cijfers</h2>
+        </br>
+        <h4>Het operationeel dashboard van 106 Inlncie</h4>
+        </br></br></br></br></br>
+        <div class="">
+            <select name="table" method='GET' action='/about'>Kies een staat: 
+                <span>
+                    <option value="none">Select an Option</option>
+                    {% for state in states %}
+                        <option value="{{ state }}" >{{ state }}</option>
+                    {% endfor %}
+                </span>
+            </select>         
+        </div>
+    </div>
+    </br></br></br></br></br>
+    <div align=center>
+        {% for row in rows%}
+            {{ row }}
+        {% endfor %}
+        </br>
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table | safe }}
+        {% endfor %}
+    </div-->
+{% endblock content %}
